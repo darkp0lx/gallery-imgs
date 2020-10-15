@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+.container-grid {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas: "img1 img2 img3 img3 img3" "img1 img2 img3 img3 img3" "img4 img4 img3 img3 img3" "img4 img4 img3 img3 img3" "img6 img6 img5 img5 img5" "img6 img6 img5 img5 img5";
+  gap: 5px;
+}
+.container-grid .img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(50%);
+}
+.container-grid :hover {
+  cursor: pointer;
+  filter: none;
+}
+.container-grid .img1 {
+  grid-area: img1;
+}
+.container-grid .img2 {
+  grid-area: img2;
+}
+.container-grid .img3 {
+  grid-area: img3;
+}
+.container-grid .img4 {
+  grid-area: img4;
+}
+.container-grid .img5 {
+  grid-area: img5;
+}
+.container-grid .img6 {
+  grid-area: img6;
+}
+.container-grid .container-img {
+  position: absolute;
+  background-color: rgba(53, 50, 50, 0.5);
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  transform: translateX(-100%);
+  right: 0;
+  bottom: 0;
+  top: 0;
+  transition: transform 0.4s ease-in;
+}
+.container-grid .container-img .container-image {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.container-grid .container-img .container-image img {
+  width: 90%;
+  height: 85%;
+}
+.container-grid .container-img i {
+  cursor: pointer;
+  margin: 0.5em;
+  font-size: 2em;
+  right: 0;
+  top: 0;
+  position: absolute;
+  color: white;
+}
+.container-grid .move {
+  transform: translateX(0);
+}
+.container-grid .img-show {
+  height: 88%;
+  transform: scale(0);
+  display: block;
+  object-fit: cover;
+  transition: transform 0.2s 0.4s;
+}
+.container-grid .show {
+  transform: scale(1);
+}
